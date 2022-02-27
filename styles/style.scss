@@ -1,0 +1,160 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem;
+  &.light {
+    background-color: rgb(248, 248, 248);
+  }
+  &.dark {
+    background-color: rgb(34, 34, 34);
+    color: white;
+  }
+}
+
+.themeSwitcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.colorContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.coloredSquare {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .btn-delete-color {
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: red;
+  }
+
+  p {
+    margin: auto;
+  }
+}
+.colorPickers {
+  position: relative;
+  .colorPicker {
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 2px, rgb(0 0 0 / 30%) 0px 4px 8px;
+    min-width: max(300px, 25vw);
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+
+    margin-top: 25px;
+    .btn-close {
+      position: absolute;
+      right: 0;
+      padding: 1rem;
+    }
+  }
+}
+
+.options {
+  grid-column: 1/-1;
+  display: flex;
+
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  .demoText {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    #sentenceInput {
+      width: 300px;
+      text-align: center;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@media (hover: none) {
+  .bandwSwith .form-switch .form-check-input {
+    width: 4rem;
+    height: 2rem;
+  }
+  .filters span,
+  .colorFormatRadio button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+  }
+}
+
+.bandwSwith {
+  .form-check.form-switch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.visuals {
+  display: grid;
+  --visualsWidth: max(300px, 10vw);
+  grid-template-columns: repeat(auto-fill, minmax(var(--visualsWidth), 1fr));
+  justify-items: center;
+  gap: 2rem 4rem;
+  width: max(350px, 70%);
+  padding-bottom: 20vh;
+  .ColorMix {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(211 211 211 / 30%);
+
+    .colorInfo {
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .combination {
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+      p {
+        padding: 1rem;
+        word-break: break-word;
+      }
+    }
+    .colorFormatRadio {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+
+      label {
+        cursor: pointer;
+        position: relative;
+      }
+    }
+  }
+}
